@@ -22,3 +22,13 @@ csq_columns <- strsplit(gsub(".*Format: ", "", csq_header), "\\|")[[1]]
 csq_df <- do.call(rbind, csq_list)
 csq_df = as.data.frame(csq_df)
 colnames(csq_df) <- csq_columns
+
+# Clean up
+rm(c(
+    info_data,
+    csq_data,
+    csq_list,
+    vcf_header,
+    csq_header,
+    csq_columns
+))
